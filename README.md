@@ -14,6 +14,8 @@ This API scrapes the website's extract page in search for travel records and the
 
 Initially, a POST request has to be sent to the "/extract" endpoint alongside JSON in its body containing a key called "cardNum", which should store a pass card number.
 
+> The card number needs to be in the format: xx.xx.xxxxxxxx-x
+
 If the card number is empty or an exception occurs while scraping the data the JSON response will be returned with a "failure" status and no travel data.
 
 Otherwise, the JSON response returns a "success" status and the fetched travel data.
