@@ -1,4 +1,4 @@
-package api.cartaomelhor.scrappers;
+package api.cartaomelhor.scrapers;
 
 
 import java.io.IOException;
@@ -10,7 +10,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-public class ExtractScrapper {
+public class ExtractScraper {
 
     private final List<Map<String, String>> travels;
     private final List<String> requestedFields;
@@ -19,7 +19,7 @@ public class ExtractScrapper {
     // ith column corresponds to the ith field in this array (extract's page)
     private final String[] orderedFields;
 
-    public ExtractScrapper(List<Map<String, String>> travels, List<String> requestedFields, String cardNum){
+    public ExtractScraper(List<Map<String, String>> travels, List<String> requestedFields, String cardNum){
         this.travels = travels;
         this.requestedFields = requestedFields;
         this.cardNum = cardNum;

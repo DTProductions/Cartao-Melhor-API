@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import api.cartaomelhor.scrappers.ExtractScrapper;
+import api.cartaomelhor.scrapers.ExtractScraper;
 
 @SpringBootApplication
 @RestController
@@ -34,10 +34,10 @@ public class Application {
 		}
 
 		List<Map<String, String>> travels = new ArrayList<>();
-		ExtractScrapper scrapper = new ExtractScrapper(travels, payload.fields, payload.cardNum);
+		ExtractScraper scraper = new ExtractScraper(travels, payload.fields, payload.cardNum);
 
 		try{
-			scrapper.loadTravels();
+			scraper.loadTravels();
 			return new ExtractRetJSON("success", travels);
 		} catch (IOException e){
 			return new ExtractRetJSON("failure", travels);
